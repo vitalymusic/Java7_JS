@@ -37,3 +37,13 @@ for(let i = 0;i<5;i++){
 }
 
 
+let skaitli = [1,23,45,567,78,89,45,234,345,456,456,23,4234];
+
+let summa  = 0;
+
+for(sk of skaitli){
+    summa+=sk;
+}
+
+document.write(`<h1>Skaitļu summa ir: ${summa}</h1>`);
+

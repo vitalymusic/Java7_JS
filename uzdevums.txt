@@ -1,0 +1,2 @@
+Uzdevums: Izveido JavaScript programu, kas saskaita visus skaitļus no 1 līdz n, kur n ir lietotāja ievadīta vērtība.
+Veikt algas aprēķinu pēc nodokļu nomaksas
