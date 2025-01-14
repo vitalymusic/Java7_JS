@@ -27,6 +27,8 @@ izvade(saskaitisana(123123,234234));
 
 
 function saskaitit(){
-    
+    let sk1 = +document.getElementById("sk1").value;
+    let sk2 = +document.getElementById("sk2").value;
 
+    document.getElementById("rezultats").value = sk1+sk2;
 }
