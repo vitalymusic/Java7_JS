@@ -28,7 +28,7 @@
         }
 
         .overlay img{
-            width: 75%;
+            height: 75%;
             border:5px solid white;
             padding: 10px;
         }
@@ -170,6 +170,22 @@
         </div>    
     `;
 
+
+
+    //  .overlay .overlay img
+
+
+    // 2. visiem galerijas atteliem uzlikt notikumu click
+
+        let galleryImages = document.querySelectorAll(".gallery_img");
+
+        for(image of galleryImages){
+            image.onclick = (event)=>{
+                // console.log(event.target);
+                document.querySelector(".overlay img").src = event.target.src
+                document.querySelector(".overlay").style.display = "flex";
+            }
+        }
 
 </script>
 </body>
