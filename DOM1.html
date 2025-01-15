@@ -18,7 +18,7 @@
 <body>
     <h1 id="main_title">Javascript DOM</h1>
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab cumque omnis assumenda, unde iusto dicta aperiam suscipit, deleniti facere numquam accusantium, maxime in qui. Cupiditate accusantium vero officiis dolore fugit!</p>
-    <img src="" alt="">
+    <img src="" alt="" data-title="Mans jauns attēls" data-size="small">
     <a href="">Hipersaite</a>
 
     <div class="box"></div>
@@ -64,8 +64,47 @@
         image.classList.add("active_image","image");
         image.classList.remove("image");
 
+        // let url = prompt("Ievadiet Mājaslapas adresi");
+        // document.querySelector("a").href="https://"+url;
 
+        // dataset - JS atribūts lai elementam pierakstīt datus
 
+        // Nolasīšana
+        title.innerText = image.dataset.title;
+        title.style.display = "block";
+        image.dataset.size = "big";
     </script>
+
+
+
+
+
+<script>
+    // Elementu izvadīšana uz lapas no Masīva
+
+    let images = [
+        "https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-nature-mountain-scenery-with-flowers-free-photo.jpg?w=2210&quality=70",
+        "https://static.vecteezy.com/system/resources/thumbnails/024/669/489/small_2x/mountain-countryside-landscape-at-sunset-dramatic-sky-over-a-distant-valley-green-fields-and-trees-on-hill-beautiful-natural-landscapes-of-the-carpathians-generative-ai-variation-5-photo.jpeg",
+        "https://corporate.walmart.com/content/corporate/en_us/purpose/sustainability/planet/nature/jcr:content/par/image_2_0.img.png/1693432526985.png",
+        "https://images.squarespace-cdn.com/content/v1/61c4da8eb1b30a201b9669f2/e2e0e62f-0064-4f86-b9d8-5a55cb7110ca/Korembi-January-2024.jpg?format=750w",
+        "https://www.insidewink.com/wp-content/uploads/2020/04/Jean_Trebek_Beauty_in_Nature.jpg",
+        "https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg?crop=0%2C176%2C3008%2C1654&wid=4000&hei=2200&scl=0.752"
+    ];
+
+
+    // elements ir box
+    box.style.display = "grid";
+    box.style.gap = "10px";
+    box.style.gridTemplateColumns = "auto auto auto";
+
+    for(img of images){
+        box.innerHTML+=`
+            <img src="${img}" width="100%">
+        `
+    }
+
+
+
+</script>
 </body>
 </html>
