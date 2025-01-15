@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* h1{color:red} */
+
+        .active_image{
+            width: 300px;
+            border:2px solid red;
+            box-shadow: 0px 0px 5px black;
+            padding: 10px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="main_title">Javascript DOM</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab cumque omnis assumenda, unde iusto dicta aperiam suscipit, deleniti facere numquam accusantium, maxime in qui. Cupiditate accusantium vero officiis dolore fugit!</p>
+    <img src="" alt="">
+    <a href="">Hipersaite</a>
+
+    <div class="box"></div>
+
+    <input type="text" name="" id="">
+
+    <h1>Otrs virsraksts</h1>
+    <p>Cita rindkopa</p>
+
+
+    <script>
+        // Elementu atlase
+        document.title = "Javascript DOM";
+        document.body.innerHTML+=`
+        <h3>Šis teksts pievienots ar JS</h3>`;
+
+        console.dir(document.body);
+        // Izvada konsolē izvēlētā objekta (elementa) īpašības
+
+        // Elementu meklēšana DOM kokā
+        let title = document.querySelector("h1");
+        let box = document.querySelector(".box");
+        let main_title = document.querySelector("#main_title");
+        let formInput1 = document.querySelector("input[type=\"text\"]");
+        let image = document.querySelector("img");
+
+        console.log(title);
+        // Query selector atgrierž tikai vienu elementu
+
+        let titles = document.querySelectorAll("h1");
+
+        console.log(titles);
+
+
+        // title.innerHTML
+        title.innerText = "Jauns teksts pirmajā virsrakstā";
+        title.style.color = "red";
+        title.style.border = "5px solid green";
+        title.style.display = "none";
+
+
+        image.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEc9A_S6BPxCDRp5WjMFEfXrpCu1ya2OO-Lw&s";
+        image.classList.add("active_image","image");
+        image.classList.remove("image");
+
+
+
+    </script>
+</body>
+</html>

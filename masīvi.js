@@ -12,6 +12,9 @@ console.log(arr1);
 
 arr1.pop();
 
+// shift()  unshift()
+
+
 arr2 = [1,2,3,4,15,20]
 arr2.sort();
 
@@ -30,13 +33,15 @@ let result1 = arr1.filter(function(item){
     }
 });
 
+result1 = arr2.filter(function(item){
+   if(item>10) return item;
+})
+
  result1 = arr2.find(function(item){
     if(item>10) return item;
  })
 
- result1 = arr2.filter(function(item){
-    if(item>10) return item;
- })
+ 
 
 
  for(item of arr2){
@@ -60,6 +65,6 @@ let sum = 0;
 
 
 console.log(result1);
-// shift()  unshift()
+
 
 
