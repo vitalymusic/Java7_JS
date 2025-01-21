@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+    </style>
+    <title>Document</title>
+
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+
+            let tabsArray = [
+                {
+                    nosaukums:"Tab1",
+                    saturs:`
+                      <h1>Pirmais tabs</h1>
+                      <p>Pirmā taba rindkopa</p>  
+                    `
+                },
+                {
+                    nosaukums:"Tab2",
+                    saturs:`
+                      <h1>Otrais tabs</h1>
+                      <p>Otrā taba rindkopa</p>  
+                    `
+                },
+                {
+                    nosaukums:"Tab3",
+                    saturs:`
+                      <h1>Trešais tabs</h1>
+                      <p>Trešā taba rindkopa</p>  
+                    `
+                },
+                {
+                    nosaukums:"Tab4",
+                    saturs:`
+                      <h1>Ceturtais tabs</h1>
+                      <p>Ceturtā taba rindkopa</p>  
+                    `
+                }
+            ]
+
+
+            // Izveidot hipersaites tabiem
+
+            tabsArray.map((tab,i)=>{
+                document.querySelector('.tab_buttons').innerHTML+=`
+                    <a href="${i}">${tab.nosaukums}</a>
+                `
+            })
+
+
+            function showTabContent(index){
+                document.querySelector('.tab_content').innerHTML = tabsArray[index].saturs
+            }
+
+
+            document.querySelectorAll('.tab_content a').map((link)=>{
+                link.onclick = function(e){
+                    e.preventDrefault();
+                    showTabContent(this.href);
+                }
+
+            })
+
+
+
+                
+
+        })
+
+    </script>
+</head>
+<body>
+        <!-- tabs -->
+            <div class="tabs">
+                <div class="tab_buttons">
+
+                </div>
+                <div class="tab_content">
+                    
+                </div>
+
+
+
+
+            </div>
+
+
+        <!-- tabs -->
+
+
+
+</body>
+</html>

@@ -102,6 +102,13 @@
 <script>
     // Elementu izvadīšana uz lapas no Masīva
 
+
+    // {
+//    title:"nosaukums",
+//    url:""
+// }
+
+
     let images = [
         "https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-nature-mountain-scenery-with-flowers-free-photo.jpg?w=2210&quality=70",
         "https://static.vecteezy.com/system/resources/thumbnails/024/669/489/small_2x/mountain-countryside-landscape-at-sunset-dramatic-sky-over-a-distant-valley-green-fields-and-trees-on-hill-beautiful-natural-landscapes-of-the-carpathians-generative-ai-variation-5-photo.jpeg",
@@ -184,6 +191,19 @@
                 // console.log(event.target);
                 document.querySelector(".overlay img").src = event.target.src
                 document.querySelector(".overlay").style.display = "flex";
+            }
+        }
+
+        document.querySelector(".overlay").onclick = function(){
+            this.style.display="none";
+        }
+
+
+        document.body.onkeydown = function(event){
+            console.log(event);
+
+            if(event.code=="Escape"){
+                document.querySelector(".overlay").style.display="none";
             }
         }
 

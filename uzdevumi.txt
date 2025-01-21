@@ -1,2 +1,36 @@
 Uzdevums: Izveido JavaScript programu, kas saskaita visus skaitļus no 1 līdz n, kur n ir lietotāja ievadīta vērtība.
 Veikt algas aprēķinu pēc nodokļu nomaksas
+
+Uzdevums 3. 
+Izveidot navigāciju izmantojot Javascript
+Katrs navigācijas elements ir objekts
+
+[
+    {
+        nosaukums:"Par mums",
+        url:"/"
+    },
+    {
+        nosaukums:"Kontakti",
+        url:"./contacts.html"
+    },
+]
+Uzdevums 4
+
+Izveidot uzdevumu sarakstu:
+Teksta lodzina ievadot Uzdevumu tas pievienojas pie masiva
+Uzdevumu saraksts tiek izvadits no masīva
+Noformēt pēc sava ieskata;
+
+<ol>
+    <li>Uzdevums 1</li>
+    <li>Uzdevums 2</li>
+    <li>Uzdevums 3</li>
+<ol>
+
+
+Uzrakstīt Tabs un akordeons
+
+
+
+
