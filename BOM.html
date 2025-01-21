@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="height:1000px">
+    <h1>Browser Object Model</h1>
+
+
+    <script>
+        let w = window.innerWidth;
+        let h = window.innerHeight;
+       window.onscroll = ()=>{
+            let scrollHeight = this.scrollY;
+            console.log(scrollHeight,w,h);
+        }
+
+
+
+
+        // window.open("./dom1.html", "mozillaTab","width=400,height=400");
+        // window.print();
+
+        // setInterval(()=>{
+        //     document.body.innerHTML = new Date();
+        // },1000)
+
+        setTimeout(()=>{
+            location.reload();
+        },5000)
+
+
+        // Local Storage
+
+        localStorage.setItem("userData",JSON.stringify([{
+            username:"Vitaly",
+            profile_picture:"img.jpg"
+        }]));
+        localStorage.setItem("background","green");
+
+        sessionStorage.setItem("test","test");
+        document.cookie = "teksts = kūkijs;max-age=3600";
+
+
+       
+
+
+    </script>
+</body>
+</html>

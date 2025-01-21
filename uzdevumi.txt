@@ -29,7 +29,14 @@ Noformēt pēc sava ieskata;
 <ol>
 
 
-Uzrakstīt Tabs un akordeons
+Uzrakstīt Tabs un 
+
+Uzdevums 5. 
+
+Uzrakstīt akordeonu
+akordeons
+
+
 
 
 

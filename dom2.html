@@ -46,6 +46,7 @@
             ]
 
 
+
             // Izveidot hipersaites tabiem
 
             tabsArray.map((tab,i)=>{
@@ -59,26 +60,24 @@
                 document.querySelector('.tab_content').innerHTML = tabsArray[index].saturs
             }
 
+            let buttons =  document.querySelectorAll('.tab_buttons a');
 
-
-            document.querySelectorAll('.tab_buttons a').forEach((link)=>{
+            buttons.forEach((link)=>{
                 
                 link.onclick = function(e){
-                    document.querySelectorAll('.tab_buttons a').forEach(tab=>{
+                    buttons.forEach(tab=>{
                         tab.classList.remove('active_tab')
                     })
                     e.preventDefault();
                     this.classList.add('active_tab');
                     showTabContent(this.href.substr(-1));
-
-
                 }
 
             })
 
 
 
-                
+            buttons[0].click();    
 
         })
 
@@ -103,6 +102,8 @@
         <!-- tabs -->
 
 
-
+            <script>
+                
+            </script>
 </body>
 </html>
