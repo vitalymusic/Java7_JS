@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-
+        .active_tab{
+            color:red;
+            font-size: 1.2em;
+        }
     </style>
     <title>Document</title>
 
@@ -47,7 +50,7 @@
 
             tabsArray.map((tab,i)=>{
                 document.querySelector('.tab_buttons').innerHTML+=`
-                    <a href="${i}">${tab.nosaukums}</a>
+                    <a href="./${i}" >${tab.nosaukums}</a>
                 `
             })
 
@@ -57,10 +60,18 @@
             }
 
 
-            document.querySelectorAll('.tab_content a').map((link)=>{
+
+            document.querySelectorAll('.tab_buttons a').forEach((link)=>{
+                
                 link.onclick = function(e){
-                    e.preventDrefault();
-                    showTabContent(this.href);
+                    document.querySelectorAll('.tab_buttons a').forEach(tab=>{
+                        tab.classList.remove('active_tab')
+                    })
+                    e.preventDefault();
+                    this.classList.add('active_tab');
+                    showTabContent(this.href.substr(-1));
+
+
                 }
 
             })
