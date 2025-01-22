@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Pasakas</h1>
+
+    <div class="lang_buttons">
+        <button data-lang="lv" onclick="setLang('lv')">LV</button>
+        <button data-lang="eng" onclick="setLang('eng')">ENG</button>
+    </div>
+    <div class="content"></div>
+
+    <script>
+        // let lang = window.localStorage.getItem("lang");
+
+            function setLang(lang){
+                window.localStorage.setItem("lang",lang);
+                fetch("./data.json")
+                .then((data)=>{return data.json()})
+                .then((data)=>{
+                    datuIzvade(data)
+                })
+            }
+
+            function datuIzvade(data){
+                document.querySelector(".content").innerHTML = "";
+                lang = window.localStorage.getItem("lang");
+
+                if(lang=="lv"){
+                    for( pasaka in data.lv){
+                    document.querySelector(".content").innerHTML += `<p>${data.lv[pasaka]}</p>`;
+                }
+                }
+                else if(lang=="eng"){
+                    for( pasaka in data.eng){
+                    document.querySelector(".content").innerHTML += `<p>${data.eng[pasaka]}</p>`;
+                }
+                }
+
+            }
+
+
+    </script>
+</body>
+</html>
