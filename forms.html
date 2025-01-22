@@ -79,7 +79,33 @@
     </div>
 
 
+<script>
+    let form = document.querySelector('#reg_form');
+    let formError = false;
 
+
+    form.onsubmit = function(event){
+        event.preventDefault();
+
+
+    
+
+    // Lauka vārds pārbaude
+    let vards = document.querySelector("#name");
+
+    if(vards.value.length <=3){
+        formError = true;
+        vards.classList.add('is-invalid');
+    }else{
+        formError = false;
+        vards.classList.replace('is-invalid','is-valid');
+    }
+
+
+
+}
+
+</script>
 </body>
 
 </html>
