@@ -17,7 +17,8 @@
         .atkape {
             margin-bottom: 50px !important;
         }
-        .large{
+
+        .large {
             font-size: 1.5rem !important;
         }
     </style>
@@ -40,7 +41,7 @@
             <div class="row mb-3">
                 <div class="col">
                     <label for="email" class="form-label">Jūsu e-pasts</label>
-                    <input type="email" class="form-control" id="email" name="email">
+                    <input type="text" class="form-control" id="email" name="email">
                 </div>
             </div>
             <div class="row mb-3">
@@ -79,33 +80,110 @@
     </div>
 
 
-<script>
-    let form = document.querySelector('#reg_form');
-    let formError = false;
+    <script>
+        let form = document.querySelector('#reg_form');
+        let formError = false;
 
 
-    form.onsubmit = function(event){
-        event.preventDefault();
-
-
-    
-
-    // Lauka vārds pārbaude
-    let vards = document.querySelector("#name");
-
-    if(vards.value.length <=3){
-        formError = true;
-        vards.classList.add('is-invalid');
-    }else{
-        formError = false;
-        vards.classList.replace('is-invalid','is-valid');
-    }
+        form.onsubmit = function (event) {
+            event.preventDefault();
 
 
 
-}
 
-</script>
+            // Lauka vārds pārbaude
+            let vards = document.querySelector("#name");
+
+            if (vards.value.length <= 3) {
+                formError = true;
+                vards.classList.add('is-invalid');
+                showError(vards,"Jūsu vārds ir pārāk īss!");
+            } else {
+                formError = false;
+                vards.classList.replace('is-invalid', 'is-valid');
+                removeError(vards);
+            }
+
+             // Lauka uzvārds pārbaude
+            let uzvards = document.querySelector("#surname");
+
+            if (uzvards.value.length <= 3) {
+                formError = true;
+                uzvards.classList.add('is-invalid');
+            } else {
+                formError = false;
+                uzvards.classList.replace('is-invalid', 'is-valid');
+            }
+
+
+             // Lauka epasts pārbaude
+
+             let emailCheck = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;  
+             let epasts = document.querySelector("#email");
+
+            if (!epasts.value.match(emailCheck)) {
+                formError = true;
+                epasts.classList.add('is-invalid');
+            } else {
+                formError = false;
+                epasts.classList.replace('is-invalid', 'is-valid');
+            }
+
+
+            // Lauka parole pārbaude
+
+            let passCheck = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{6,}$/g
+            let parole = document.querySelector("#password");
+
+            if (!parole.value.match(passCheck)) {
+                formError = true;
+                parole.classList.add('is-invalid');
+            } else {
+                formError = false;
+                parole.classList.replace('is-invalid', 'is-valid');
+            }
+
+            let paroleAtkartot = document.querySelector("#password_repeat");
+
+            if(parole.value !== paroleAtkartot.value){
+                formError = true;
+                paroleAtkartot.classList.add('is-invalid');
+            }else{
+                formError = false;
+                paroleAtkartot.classList.replace('is-invalid', 'is-valid');
+            }
+
+
+
+            // <div class="invalid-feedback">
+    //          Please choose a username.
+    //      </div>
+
+                function showError(element,errorText){
+                    element.insertAdjacentHTML("afterend",`
+                        <div class="invalid-feedback">
+                            ${errorText}
+                        </div>      
+                    `)
+                }
+                function removeError(element){
+                    element.parentElement.querySelector(".invalid-feedback").remove();
+                }
+
+
+                
+                
+
+
+
+
+
+
+
+
+        }
+
+    </script>
 </body>
 
 </html>
