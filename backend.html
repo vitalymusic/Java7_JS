@@ -7,35 +7,64 @@
 </head>
 <body>
         
-    <button>save data</button>
+    <button id="save">save data</button>
 
+    <button id="get">Get data</button>
+
+
+    <div class="photoGallery"></div>
     <script>
         // POST   /posts
 
-        document.querySelector("button").onclick = function(){
+        document.querySelector("#save").onclick = function(){
 
-        
 
-        fetch("http://127.0.0.1:53096/posts", {
+        fetch("http://localhost:9000/posts", {
                 method: "POST",
+                mode:"no-cors",
                 headers: {
                     'Content-Type': 'application/json',
-                    'Accept': 'application/json'
+                    'Accept': 'application/json',
                 },
+                
                 body: JSON.stringify({
                     title:"Jauns raksts",
-                    author:"Javascript"
+                    views:"10000"
                 })
             })
-                .then(response => response.json())
+                .then(response => response.text())
                 .then((data)=>{
-                        return console.log(data);
+                        console.log(data);
                     // if(data.success=="true"){
                     //     return alert(data.message);
                     // }
                 })
-                .catch(error => console.error(error));
+                .catch(error => console.log(error));
 
+            }
+
+
+
+
+            document.querySelector("#get").onclick = function(){
+                fetch('https://jsonplaceholder.typicode.com/photos')
+                .then((response) => response.json())
+                .then((json) => showData(json));
+            }
+
+            function showData(data){
+                let div = document.querySelector(".photoGallery");
+                data.map(function(item,i){
+                    if(i<=100){
+                        div.innerHTML+=`
+                            <div class="image">
+                                <a href="${item.url}"><img src="${item.thumbnailUrl}"></a>
+                                <h5>${item.title}</h5>
+                            </div>    
+                        `;
+                    }
+
+                })
             }
     </script>
 </body>
